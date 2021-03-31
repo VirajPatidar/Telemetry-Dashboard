@@ -1,4 +1,4 @@
-import Layout from '../components/Layout'
+import Navbar from '../components/Navbar'
 import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
@@ -20,15 +20,15 @@ export default function MyApp(props) {
   return (
     <>
       <Head>
-        <title>My page</title>
+        <title>Telemetry</title>
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
       </Head>
       {/* <ThemeProvider theme={theme}> */}
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Layout>
+        <Navbar>
           <Component {...pageProps} />
-        </Layout>
+        </Navbar>
       {/* </ThemeProvider> */}
     </>
   );

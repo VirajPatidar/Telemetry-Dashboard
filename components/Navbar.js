@@ -1,23 +1,5 @@
-// import Link from 'next/link';
-// const Navbar = () => {
-
-//   return (
-//         <nav className="row align-items-center">
-//             <div className="logo col-md-6">
-//                 <h1>Telemetry</h1>
-//             </div>
-//             <ul className="col-md-6 nav align-items-center justify-content-end">
-//                 <li className="nav-item"><Link href="/"><a className="nav-link">HOME</a></Link></li>
-//                 <li className="nav-item"><Link href="/about"><a className="nav-link">ABOUT</a></Link></li>
-//                 <li className="nav-item"><Link href="/dashboard"><a className="nav-link">DASHBOARD</a></Link></li>
-//                 <li className="nav-item"><Link href="/login/"><a className="nav-link">LOGIN</a></Link></li>
-//             </ul>
-//         </nav>
-//     );
-// }
- 
-// export default Navbar;
-
+import Link from 'next/link'
+import Gitlink from './Gitlink'
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -35,8 +17,9 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import TimelineIcon from '@material-ui/icons/Timeline';
+
 
 const drawerWidth = 240;
 
@@ -95,6 +78,9 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginLeft: 0,
   },
+  git: {
+    marginRight: 13,
+  }
 }));
 
 const Navbar = (props) => {
@@ -130,8 +116,8 @@ const Navbar = (props) => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" noWrap>
-              Persistent drawer
+            <Typography variant="h5" noWrap>
+              Telemetry Analytics
             </Typography>
           </Toolbar>
         </AppBar>
@@ -145,28 +131,42 @@ const Navbar = (props) => {
           }}
         >
           <div className={classes.drawerHeader}>
+            <Gitlink/>
             <IconButton onClick={handleDrawerClose}>
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </div>
           <Divider />
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+            <Link href="/countries_quarter">
+              <ListItem button>
+                <ListItemIcon><TimelineIcon fontSize="large"/></ListItemIcon>
+                <ListItemText primary= "Quaterly Statistics (Countries)"/>
               </ListItem>
-            ))}
+            </Link>
+            <Link href="/continents_quarter">
+              <ListItem button>
+                <ListItemIcon><TimelineIcon fontSize="large"/></ListItemIcon>
+                <ListItemText primary= "Quaterly Statistics (Continents)"/>
+              </ListItem>
+            </Link>
           </List>
           <Divider />
           <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+            <Link href="/">
+              <ListItem button>
+                <ListItemIcon><AssessmentIcon/></ListItemIcon>
+                <ListItemText primary= "User Statistics"/>
               </ListItem>
-            ))}
+            </Link>
+            <Link href="/">
+              <ListItem button>
+                <ListItemIcon><AssessmentIcon/></ListItemIcon>
+                <ListItemText primary= "User Locations"/>
+              </ListItem>
+            </Link>
           </List>
+          <Divider />
         </Drawer>
       </div>
       {React.cloneElement(props.children, { open: open })}

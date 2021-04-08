@@ -153,7 +153,7 @@ const Navbar = (props) => {
           </List>
           <Divider />
           <List>
-            <Link href="/">
+            <Link href="/countries">
               <ListItem button>
                 <ListItemIcon><AssessmentIcon/></ListItemIcon>
                 <ListItemText primary= "User Statistics"/>

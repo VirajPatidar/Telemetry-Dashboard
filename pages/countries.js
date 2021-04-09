@@ -52,13 +52,11 @@ export default function Usercountries(props) {
 
   function chart(){
         
-    axios.get("http://localhost:3000/api/countries")
+    axios.get("/api/countries")
     .then(res => {
 
       countries1 = [...(Object.keys(res['data']['country_counts']))].slice(0, 21);
-      console.log(countries1);
       data1 = [...(Object.values(res['data']['country_counts']))].slice(0, 21);
-      console.log(data1);
 
         setChartData1({
           labels: countries1,
@@ -76,9 +74,7 @@ export default function Usercountries(props) {
         });
 
       countries2 = [...(Object.keys(res['data']['country_counts']))].slice(21, 187);
-      console.log(countries2);
       data2 = [...(Object.values(res['data']['country_counts']))].slice(21, 187);
-      console.log(data2);
 
         setChartData2({
           labels: countries2,

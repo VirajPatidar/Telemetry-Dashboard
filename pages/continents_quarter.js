@@ -81,7 +81,7 @@ export default function ContinentsQuarter(props) {
     let locdata = [];
     let all = [];
     
-    axios.get("http://localhost:3000/api/countries_quarter")
+    axios.get("/api/countries_quarter")
     .then(res => {
 
       quarters=res.data.quarters;

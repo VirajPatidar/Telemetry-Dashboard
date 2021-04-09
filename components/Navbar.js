@@ -19,6 +19,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import TimelineIcon from '@material-ui/icons/Timeline';
+import HomeIcon from '@material-ui/icons/Home';
 
 
 const drawerWidth = 240;
@@ -136,6 +137,15 @@ const Navbar = (props) => {
               {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
             </IconButton>
           </div>
+          <Divider />
+          <List>
+            <Link href="/">
+              <ListItem button>
+                <ListItemIcon><HomeIcon fontSize="large"/></ListItemIcon>
+                <ListItemText primary= "Home"/>
+              </ListItem>
+            </Link>
+          </List>
           <Divider />
           <List>
             <Link href="/countries_quarter">

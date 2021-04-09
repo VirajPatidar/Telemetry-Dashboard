@@ -165,13 +165,13 @@ const Navbar = (props) => {
           <List>
             <Link href="/countries">
               <ListItem button>
-                <ListItemIcon><AssessmentIcon/></ListItemIcon>
+                <ListItemIcon><AssessmentIcon fontSize="large" /></ListItemIcon>
                 <ListItemText primary= "User Statistics"/>
               </ListItem>
             </Link>
             <Link href="/MapChart">
               <ListItem button>
-                <ListItemIcon><AssessmentIcon/></ListItemIcon>
+                <ListItemIcon><AssessmentIcon fontSize="large" /></ListItemIcon>
                 <ListItemText primary= "User Locations"/>
               </ListItem>
             </Link>

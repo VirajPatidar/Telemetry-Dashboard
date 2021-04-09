@@ -9,7 +9,6 @@ _A sample api has been built and used to achieve the same :  `pages/api/..`_
 * MATERIAL-UI
 * Chart.js
 * React Simple Maps
-* Profit!
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

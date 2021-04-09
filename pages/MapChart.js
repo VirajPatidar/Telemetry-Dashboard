@@ -98,7 +98,6 @@ const MapChart = (props) => {
                                     ))
                                 }
                             </Geographies>
-                            {console.log(mar)}
                             {mar.map(({ coordinates, key }) => (
                                 <Marker key={key} coordinates={coordinates}>
                                     <circle r={4} fill="#F00" stroke="#000000" strokeWidth={1} />

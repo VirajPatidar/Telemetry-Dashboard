@@ -2,9 +2,9 @@
 
 _A sample api has been built and used to achieve the same :  `pages/api/..`_
 
-Link to the website: [http://localhost:3000](http://localhost:3000)
+**Link to the website:** [https://telemetry-dashboard.vercel.app/](https://telemetry-dashboard.vercel.app/)
 
-Tech Stack
+**Tech Stack**
 * Next.js
 * MATERIAL-UI
 * Chart.js
